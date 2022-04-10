@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&family=Open+Sans:wght@300;400;500&display=swap");
+    * {
+      box-sizing: border-box;
+    }
+    #wapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+    }
+    form {
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      padding: 30px;
+    }
+    body {
+      font-family: "Heebo", sans-serif;
+      font-family: "Open Sans", sans-serif;
+      font-size: 18px;
+    }
+    h3 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+    input {
+      height: 50px;
+      width: 300px;
+      outline: none;
+      border: 1px solid #dadce0;
+      padding: 10px;
+      border-radius: 6px;
+      color: #202124;
+      font-size: inherit;
+      /* inherits kế thừa font chữ của cha nó (body) */
+      transition: all 0.3s ease-in-out;
+    }
+    label {
+      position: absolute;
+      padding: 0 5px;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      /* Di chuyển phần tử xuống một khoảng cách bằng một nửa chiều cao của phần tử gốc the chiều dọc.*/
+      background-color: #fff;
+      pointer-events: none;
+      /* quan trong tắt sự kiện chỏ chuột */
+      transition: all 0.3s ease-in-out;
+    }
+    /* dung :valid kiem tra gia tri phan tu <input> có giá trị hợp lệ "ĐIỀU KIÊN required". không hợp lệ dùng giá trị :invalid */
+    .form-group input:focus + label,
+    .form-group input:valid + label {
+      top: 0px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a73e8;
+    }
+    .form-group input:focus {
+      border: 2px solid #1a73e8;
+    }
+    #btn-Login {
+      background-color: #226cce;
+      color: #fff;
+    }
+    #btn-Login:hover{
+      background-color: #046cf3
+    }
+  </style>
+  <body>
+    <div id="wapper">
+      <form action="">
+        <h3>Log In</h3>
+        <div class="form-group">
+          <input type="text" name="email" required />
+          <label for="Email">Email</label>
+          <!-- sử dụng position absolute để chôi nỗi đối tượng, cách sửn dụng cần khai báo phần cha position relative -->
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" required/>
+          <label for="password">Password</label>
+        </div>
+        <input type="submit" value="Log in" id="btn-Login" />
+      </form>
+    </div>
+  </body>
+  <script></script>
+</html>
